@@ -1,6 +1,8 @@
 // create a graph class
 //code can be found on geeksforgeeks.org
+import Queue from "./queue.js"
 class Graph {
+  
     // defining vertex array and
     // adjacent list
     constructor(noOfVertices)
@@ -99,3 +101,4 @@ list.addEdge('C', 'F');
 list.printGraph()
 console.log("BFS")
 list.bfs('A')
+
