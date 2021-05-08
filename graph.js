@@ -54,6 +54,32 @@ printGraph()
 }
 
     // bfs(v)
+    //node traversal -breadth first search
+    bfs(startingNode){
+        //visited object
+        let visited ={}
+        //object for queue
+        let q = new Queue() //A Queue is used to keep the unvisited nodes 
+        //add starting node to queue
+        visited[startingNode] = true;
+        q.enqueue(startingNode)
+     while(!q.isEmpty()){  // loop until queue is element
+         let getQueueElement = q.dequeue() // get the element from the queue
+         console.log(getQueueElement)
+              // get the adjacent list for current vertex
+        var get_List = this.AdjList.get(getQueueElement);
+         // loop through the list and add the element to the
+        // queue if it is not processed yet
+        for (var i in get_List) {
+            var neigh = get_List[i];
+  
+            if (!visited[neigh]) {
+                visited[neigh] = true;
+                q.enqueue(neigh);
+            }
+        }
+     }
+    }
     // dfs(v)
 }
 let list = new Graph(6) //the number of vertices making up the graph, so 6 nodes needing to be connected somehow(undirected)
@@ -71,3 +97,5 @@ list.addEdge('E', 'F');
 list.addEdge('E', 'C');
 list.addEdge('C', 'F');
 list.printGraph()
+console.log("BFS")
+list.bfs('A')
