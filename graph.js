@@ -1,6 +1,6 @@
 // create a graph class
 //code can be found on geeksforgeeks.org
-import Queue from "./queue.js"
+const Queue = require("./queue.js") 
 class Graph {
   
     // defining vertex array and

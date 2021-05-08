@@ -11,6 +11,12 @@ this.items.push(element)
             return "overflow"
 return this.items.shift()
 }
+
+isEmpty()
+{
+    // return true if the queue is empty.
+    return this.items.length == 0;
+}
 }
 
-export default Queue
+module.exports = Queue
